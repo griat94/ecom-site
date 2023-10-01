@@ -1,9 +1,13 @@
-import CategoryMenu from './components/category-menu/category-menu.component'
-import { categories } from './utils/constants'
-import './components/category-item/category-item.styles.scss'
+import { Route, Routes } from 'react-router-dom'
+
+import Home from './routes/home/home.component'
 
 const App = () => {
-  return <CategoryMenu categories={categories} />
+  return (
+    <Routes>
+      <Route path='/' element={<Home />} />
+    </Routes>
+  )
 }
 
 export default App
