@@ -1,5 +1,5 @@
 import CategoryMenu from './components/category-menu/category-menu.component'
-import { categories } from './utils/constant'
+import { categories } from './utils/constants'
 import './components/category-item/category-item.styles.scss'
 
 const App = () => {
