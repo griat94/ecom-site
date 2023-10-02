@@ -3,6 +3,10 @@ import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
 } from '../../utils/firebase/firebase.utils'
+import FormInput from '../form-input/form-input.component'
+import Button from '../button/button.component'
+
+import './sign-up-form.styles.scss'
 
 const defaultFormFields = {
   displayName: '',
@@ -50,38 +54,36 @@ const SignUpForm = () => {
   }
 
   return (
-    <React.Fragment>
-      <h1>Sign up with your email and password</h1>
+    <div className='sign-up-container'>
+      <h2>Don't have an account?</h2>
+      <span>Sign up with your email and password</span>
       <form onSubmit={onSubmitHandler}>
-        <label>Display Name</label>
-        <input
+        <FormInput
+          label='Display Name'
           name='displayName'
           type='text'
           required
           onChange={onChangeHandler}
           value={displayName}
         />
-
-        <label>Email</label>
-        <input
+        <FormInput
+          label='Email'
           name='email'
           type='email'
           required
           onChange={onChangeHandler}
           value={email}
         />
-
-        <label>Password</label>
-        <input
+        <FormInput
+          label='Password'
           name='password'
           type='password'
           required
           onChange={onChangeHandler}
           value={password}
         />
-
-        <label>Confirm Password</label>
-        <input
+        <FormInput
+          label='Confirm Password'
           name='confirmPassword'
           type='password'
           required
@@ -90,9 +92,9 @@ const SignUpForm = () => {
         />
         {passwordError && <p style={{ color: 'red' }}>{passwordError}</p>}
 
-        <button type='submit'>Sign Up</button>
+        <Button type='submit'>Sign Up</Button>
       </form>
-    </React.Fragment>
+    </div>
   )
 }
 
