@@ -9,7 +9,6 @@
   background-color: black;
   color: white;
   text-transform: uppercase;
-  font-family: 'Open Sans Condensed';
   font-weight: bolder;
   border: none;
   cursor: pointer;
@@ -22,9 +21,10 @@
     border: 1px solid black;
   }
 
-  &.google-sign-in {
+  &.google-authentication {
     background-color: #4285f4;
     color: white;
+    font-weight: 300;
 
     &:hover {
       background-color: #357ae8;
