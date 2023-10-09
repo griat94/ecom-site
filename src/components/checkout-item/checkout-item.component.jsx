@@ -11,22 +11,30 @@ const CheckoutItem = ({ checkoutItem }) => {
     useContext(CartContext)
 
   const increaseQuantity = () => incrementItemQuantity(checkoutItem)
-
   const decreaseQuantity = () => decrementItemQuantity(checkoutItem)
-
   const removeItem = () => removeItemFromCart(checkoutItem)
 
   return (
-    <div>
-      <img src={imageUrl} alt={`${name}`} />
-      <span>{name}</span>
+    <div className='checkout-item-container'>
+      <div className='image-container'>
+        <img src={imageUrl} alt={`${name}`} />
+      </div>
+      <span className='name'>{name}</span>
 
-      <Button onClick={decreaseQuantity}>-</Button>
-      <span>{quantity}</span>
-      <Button onClick={increaseQuantity}>+</Button>
+      <span className='quantity'>
+        <div className='arrow' onClick={decreaseQuantity}>
+          &#10094;
+        </div>
+        <span className='value'>{quantity}</span>
+        <div className='arrow' onClick={increaseQuantity}>
+          &#10095;
+        </div>
+      </span>
 
-      <span>{quantity * price}</span>
-      <Button onClick={removeItem}>X</Button>
+      <span className='price'>${price}</span>
+      <div className='remove-button' onClick={removeItem}>
+        &#10005;
+      </div>
     </div>
   )
 }
