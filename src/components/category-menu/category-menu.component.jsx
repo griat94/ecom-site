@@ -1,15 +1,15 @@
 import React from 'react'
 import CategoryItem from '../category-item/category-item.component'
 
-import './category-menu.styles.scss'
+import { CategoryContainer } from './category-menu.styles'
 
 const CategoryMenu = ({ categories }) => {
   return (
-    <div className='categories-container'>
+    <CategoryContainer>
       {categories.map((category) => (
         <CategoryItem key={category.id} category={category} />
       ))}
-    </div>
+    </CategoryContainer>
   )
 }
 
