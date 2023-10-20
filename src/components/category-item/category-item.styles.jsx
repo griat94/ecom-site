@@ -36,7 +36,7 @@ export const Body = styled.div`
 
 export const CategoryItemContainer = styled.div`
   min-width: 30%;
-  height: 240px;
+  height: 400px;
   flex: 1 1 auto;
   display: flex;
   align-items: center;
